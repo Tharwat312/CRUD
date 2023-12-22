@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+}
+textarea {
+    resize: none;
+}
+.table>:not(caption)>*>* {
+    background-color: black;
+}
+button, select {
+    text-transform: capitalize;
+}
+.invalid {
+    border: 2px solid red !important;
+}
+textarea.form-control {
+    min-height: calc(6.5em + .75rem + calc(var(--bs-border-width) * 2));
+}
+.productdescription {
+    max-width: 400px;
+    word-wrap: break-word;
+}

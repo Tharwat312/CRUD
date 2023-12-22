@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD System</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <h1 class="text-center mb-5 pt-5">product management system</h1>
+    <section>
+        <div class="container py-5">
+            <div class="w-75 mx-auto mb-3">
+                <div class="form-group mb-3">
+                    <label for="productName" class="mb-2">product name</label>
+                    <input oninput="validateProductName()" type="text" class="form-control" id="productName"
+                        placeholder="Enter your capitalized product name (2-10)">
+                    <p id="invalidName" class="text-danger d-none">Invalid Name, Please enter your product name starting
+                        in a capital letter and from 2 to 10 chars</p>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="productPrice" class="mb-2">product price</label>
+                    <input oninput="validateProductPrice()" type="number" class="form-control" id="productPrice"
+                        placeholder="Enter your product price from 1k to 10k">
+                    <p id="invalidPrice" class="text-danger d-none">Invalid Price, please enter your product price from
+                        1k to 10k</p>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="productcateg" class="mb-2">product category</label>
+                    <input oninput="validateProductCategory()" type="text" class="form-control" id="productCateg"
+                        placeholder="Choose from 3 categories (Laptop, Mobile, TV)">
+                    <p id="invalidCateg" class="text-danger d-none">Invalid Category Choose from (Laptop, Mobile, TV)
+                    </p>
+                </div>
+                <div class="form-group mb-5">
+                    <label for="productDesc" class="mb-2">product description</label>
+                    <textarea oninput="validProductDescription()" name="productDesc" id="productDesc"
+                        class="form-control"
+                        placeholder="Enter your description from 50 chars to 400 chars"></textarea>
+                    <p id="invalidDesc" class="text-danger d-none">Invalid description, please enter description with a
+                        minimum of 250 chars to 400 char</p>
+                </div>
+                <input type="text" oninput="searchItemByName(this.value)" placeholder="Search by item NAME"
+                    class="form-control w-75 mb-5 mx-auto">
+                <button id="btnAdd" onclick="addProduct()"
+                    class="btn btn-primary text-capitalize btn-lg d-block mb-4">add product</button>
+                <button id="btnUpdate" onclick="updateProductValue()"
+                    class="btn btn-primary text-capitalize btn-lg d-none">update product</button>
+            </div>
+            <table class="table table-dark text-center w-75 mx-auto">
+                <thead>
+                    <th>index</th>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>category</th>
+                    <th>description</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </thead>
+                <tbody id="tData">
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
